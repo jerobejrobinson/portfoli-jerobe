@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Tilt+Warp&display=swap");
+@keyframes downCaret {
+  from {
+    transform: translateY(-150%) scale(0);
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(100%);
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #20C997;
+  }
+}
+* {
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  overflow: hidden;
+}
+body a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: rgb(17, 20, 24);
+}
+nav img {
+  border: 5px solid rgba(128, 128, 128, 0.5);
+  border-radius: 50%;
+  width: 50%;
+}
+nav .navLinks {
+  height: calc(2rem + 3px);
+}
+nav .navLinks::after {
+  transition: all 300ms ease-in-out 0s;
+  display: block;
+  content: " ";
+  height: 3px;
+  width: 0%;
+  background-color: #20C997;
+}
+nav .navLinks:hover::after {
+  width: 100%;
+}
+nav .navLinks:not(:hover)::after {
+  float: right;
+}
+nav div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+}
+
+main {
+  overflow-y: scroll;
+  height: 100vh;
+}
+main section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+main section span, main section h1 {
+  font-family: "Tilt Warp", cursive;
+}
+main section span.subHeader {
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  color: rgba(128, 128, 128, 0.1);
+  letter-spacing: 1px;
+  z-index: 5;
+}
+main section h1 {
+  position: relative;
+  font-weight: bold;
+  width: fit-content;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  z-index: 100;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+main section h1::after {
+  transition: all 300ms ease-in-out 0s;
+  display: block;
+  content: " ";
+  height: 0.75rem;
+  width: 100%;
+  background-color: #20C997;
+  margin-top: -0.5rem;
+}
+
+#home {
+  background: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#home #content {
+  text-align: center;
+}
+#home #downCaret {
+  justify-self: flex-end;
+  animation: downCaret 1.3s ease-out 0s infinite;
+  font-size: 2rem;
+}
+
+#about-me {
+  background: lightblue;
+}
+
+#services {
+  background: lightcoral;
+}
+
+#resume {
+  background: lightgreen;
+}
+
+#portfolio {
+  background: lightpink;
+}
+
+#contact {
+  background: lightyellow;
+}
+
+/*# sourceMappingURL=index.css.map */

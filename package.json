@@ -1,0 +1,12 @@
+{
+  "name": "personal-web-site-jerobe-j-robinson",
+  "version": "1.0.0",
+  "description": "This is my repo for my new personal website. Going back to the basics with this one by using the holy trinity ( HTML, CSS, and J S)",
+  "main": "index.js",
+  "scripts": {
+    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
