@@ -70,6 +70,7 @@ body {
 }
 nav {
     @include paddingTopBottom;
+    position: relative;
     color: white;
     display: flex;
     flex-direction: column;
@@ -77,6 +78,7 @@ nav {
     justify-content: space-between;
     height: 100vh;
     background-color: $main-background-color;
+    z-index: 1;
     img {
         border: 5px solid rgba(128, 128, 128, .5);
         border-radius: 50%;
@@ -106,6 +108,17 @@ nav {
         justify-content: space-between;
         width: 50%;
     }
+    &::after {
+        display: block;
+        content: " ";
+        background-color: #20C997;
+        width: 500px;
+        height: 100vh;
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        right: -100%;
+    }
 }
 
 main {
@@ -130,7 +143,7 @@ main {
         font-size: 6rem;
         color: rgba(128, 128, 128, .1);
         letter-spacing: 1px;
-        z-index: 5;
+        z-index: 0;
     }
 
     section h1 {
@@ -171,6 +184,7 @@ main {
         background-color: red;
         display: flex;
         justify-content: space-around;
+
     }
 }
 #about-me {
