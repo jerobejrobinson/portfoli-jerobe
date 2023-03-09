@@ -167,6 +167,11 @@ main {
         animation: downCaret 1.3s ease-out 0s infinite;
         font-size: 2rem;
     }
+    #buttons {
+        background-color: red;
+        display: flex;
+        justify-content: space-around;
+    }
 }
 #about-me {
     background: lightblue;
