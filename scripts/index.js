@@ -1,5 +1,16 @@
-const nav = document.querySelector("nav")
-const hiddenNav = window.getComputedStyle(nav, "::after")
+(() => {
+    const hiddenNav = document.querySelector("nav.hidden")
+    const aboutMeLink = document.querySelector('#aboutme')
 
-console.log(nav)
-console.log(hiddenNav)
+    aboutMeLink.addEventListener('click', (e) => {
+        console.log(hiddenNav.classList)
+        hiddenNav.classList.add('active');
+    })
+
+    hiddenNav.addEventListener('click', (e) => {
+        hiddenNav.classList.remove('active');
+    })
+
+    console.log(nav)
+    console.log(hiddenNav)}
+)();

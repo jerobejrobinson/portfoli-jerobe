@@ -19,6 +19,11 @@ $base-transition: all 300ms ease-in-out 0s;
     padding-bottom: $size;
 }
 
+@mixin marginTopBottom($size: 1rem) {
+    margin-top: $size;
+    margin-bottom: $size;
+}
+
 @mixin typingAnimation() {
     animation: 
             typing 3.5s steps(40, end),
@@ -63,9 +68,32 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     overflow: hidden;
+    position: relative;
     a {
         color: $link-text-color;
         text-decoration: none;
+    }
+}
+nav.hidden {
+    position: absolute;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 12.5vw;
+    transition: $base-transition;
+    transform: translateX(0);
+    background-color: $secondary-color;
+    .navLinks {
+        @include marginTopBottom(2rem);
+        color: $main-background-color;
+        &::after {
+            background-color: $main-background-color;
+        }
+    }
+    
+    &.active {
+        transform: translateX(200%);
     }
 }
 nav {
@@ -88,12 +116,6 @@ nav {
         height: calc(2rem + 3px);
     }
     .navLinks::after {
-        // transition: $base-transition;
-        // display: block;
-        // content: " ";
-        // height: 3px;
-        // width: 0%;
-        // background-color: $secondary-color;
         @include underline;
     }
     .navLinks:hover::after {
@@ -109,15 +131,7 @@ nav {
         width: 50%;
     }
     &::after {
-        display: block;
-        content: " ";
-        background-color: #20C997;
-        width: 500px;
-        height: 100vh;
-        position: absolute;
-        z-index: 100;
-        top: 0;
-        right: -100%;
+        
     }
 }
 
