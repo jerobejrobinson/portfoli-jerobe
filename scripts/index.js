@@ -11,6 +11,4 @@
         hiddenNav.classList.remove('active');
     })
 
-    console.log(nav)
-    console.log(hiddenNav)}
-)();
+})();
